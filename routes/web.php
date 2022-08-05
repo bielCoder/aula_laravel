@@ -17,4 +17,28 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('listagem-usuario',[userController::class,'listUser']);
+Route::group(['namespace'=> 'form'],function(){
+
+// verbo GET
+
+Route::get('usuarios',[userController::class,'listAll'])->name('users.listAll');
+Route::get('usuarios/new',[userController::class,'create'])->name('users.new');
+Route::get('usuarios/{user}',[userController::class,'listSingle'])->name('users.listSingle');
+Route::get('usuarios/{user}/update',[userController::class,'update'])->name('users.update');
+
+
+// verbo POST
+
+Route::post('usuarios/store',[userController::class,'store'])->name('users.store');
+
+
+
+// verbo PATH/PUT
+
+Route::put('usuarios/{user}/edit',[userController::class,'edit'])->name('users.edit');
+
+// verbo DELETE
+
+Route::delete('usuarios/{user}/clear',[userController::class,'destroy'])->name('users.destroy');
+});
+
