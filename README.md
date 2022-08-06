@@ -1,1 +1,1 @@
-*Nessa aula foi ensinado sobre verbalização rest e injeção de dependencias*
+*Nessa aula foi ensinado sobre versionamento do banco de dados com migrations*

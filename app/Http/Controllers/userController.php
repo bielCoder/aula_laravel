@@ -1,67 +1,85 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\user;
 use Illuminate\Http\Request;
-use App\Models\User;
-use Illuminate\Support\Facades\Hash;
 
 class userController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
+    }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
 
-   public function listAll(User $users)
-   {
-      $users = User::all();
-      return view('listagem',['users'=>$users]);
-   }
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
 
-   public function listSingle(User $user)
-   {
-      return view('singleList',['user'=>$user]);
-   }
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\user  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function show(user $user)
+    {
+        //
+    }
 
-   public function  create()
-   {
-     return view('userForm');
-   }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\user  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(user $user)
+    {
+        //
+    }
 
-   public function store(Request $request,User $users){
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\user  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, user $user)
+    {
+        //
+    }
 
-         $users -> name = $request -> name;
-         $users -> email = $request -> email;
-         $users -> password = Hash::make($request -> senha);
-         $users -> save();
-
-         return redirect() -> route('users.listAll');
-   }
-
-   public function update(User $user){
-         return view('userUpdate',['user'=>$user]);
-   }
-
-   public function edit(User $user,Request $request)
-   {
-
-        $user -> name = $request -> name;
-        
-        if(filter_var($request -> email,FILTER_VALIDATE_EMAIL)){
-         $user -> email = $request -> email;
-        }
-
-        if(!empty($request -> senha)){
-         $user -> password = Hash::make($request -> senha); 
-        }
-        
-        $user -> save();
-
-        return redirect()->route('users.listAll');
-   }
-
-   public function destroy(User $user)
-   {
-      $user -> delete();
-      return redirect()->route('users.listAll');
-   }
-
-
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\user  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(user $user)
+    {
+        //
+    }
 }
