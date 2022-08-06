@@ -16,5 +16,3 @@ use App\Http\Controllers\userController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('listagem-usuario',[userController::class,'listUser']);

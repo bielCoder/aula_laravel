@@ -1,1 +1,1 @@
-*Nessa aula foi ensinado sobre a estrutura e como manusear*
+*Nessa aula foi ensinado sobre versionamento do banco de dados com migrations*
