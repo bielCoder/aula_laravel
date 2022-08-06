@@ -1,1 +1,1 @@
-*Nessa aula foi ensinado sobre versionamento do banco de dados com migrations*
+*Nessa aula foi ensinado sobre regras de negocios da camada de modelo*

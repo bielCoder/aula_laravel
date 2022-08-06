@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\userController;
+use App\Http\Controllers\postController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +13,6 @@ use App\Http\Controllers\userController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [postController::class,'showForm'])->name('show.form');
+Route::post('/debug', [postController::class,'debug'])->name('debug.form');
+
