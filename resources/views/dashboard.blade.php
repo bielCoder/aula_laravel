@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Painel de Administração</title>
+</head>
+<body>
+	<h1>Painel de Administração</h1>
+	<form action="" method="post">
+		@csrf
+	<a href="{{route('logout')}}">Logout</a>
+	</form>
+</body>
+</html>
