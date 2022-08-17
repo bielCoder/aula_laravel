@@ -1,0 +1,1 @@
+*Nessa aula foi ensinado sobre templates do blade*
